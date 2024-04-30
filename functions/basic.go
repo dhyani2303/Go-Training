@@ -14,6 +14,7 @@ func main() {
 	fmt.Println(sum)
 }
 
+// a function can return multiple values
 func f1(a, b, c int, d, e float64) {
 	fmt.Println(a, b, c, d, e)
 }
