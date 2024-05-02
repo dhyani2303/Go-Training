@@ -74,15 +74,41 @@ func main() {
 	//		prefix  }
 	//prefix]
 
-	jsonData1, err1 := json.MarshalIndent(courses, "", "\t")
-	if err1 != nil {
-		panic(err1)
-	}
+	//jsonData1, err1 := json.MarshalIndent(courses, "", "\t")
+	//if err1 != nil {
+	//	panic(err1)
+	//}
 
 	fmt.Println(jsonData) //[]byte slice is returned
 	fmt.Println(string(jsonData))
 	fmt.Printf("%s", jsonData)
+	//fmt.Println(string(jsonData1))
 
-	fmt.Println(string(jsonData1))
+	//encoding integer to json
+	integer := 10
 
+	jsonData, err = json.Marshal(integer)
+	fmt.Println(string(jsonData))
+
+	//encoding float to json
+	float := 10.20
+	jsonData, err = json.Marshal(float)
+	fmt.Println(string(jsonData))
+
+	//encoding slice to json
+	slice := []int{1, 2, 3}
+
+	jsonData, err = json.Marshal(slice)
+
+	fmt.Println(string(jsonData))
+
+	//encoding map to json
+
+	map1 := make(map[string]string)
+
+	map1["key"] = "value"
+
+	jsonData, err = json.Marshal(map1)
+
+	fmt.Println(string(jsonData))
 }

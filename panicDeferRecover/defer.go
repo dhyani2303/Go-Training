@@ -7,16 +7,13 @@ func main() {
 	a()
 	fmt.Println("After calling a")
 	b()
-
 	fmt.Println("Value returned from c", c())
 }
 func a() {
-	i := 0
+	var i int = 0
 	defer fmt.Println(i)
 	i++
-	defer fmt.Println(i)
 
-	return
 }
 func b() {
 
@@ -29,5 +26,6 @@ func b() {
 func c() (i int) {
 
 	defer func() { i++ }()
+	fmt.Println("Value of  c", i)
 	return 1
 }
